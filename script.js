@@ -136,3 +136,17 @@ function generateMarquees() {
 	}
 }
 generateMarquees();
+
+// Detect browser for disabling SVG filter on Safari (performance issue)
+function detectBrowser() {
+	if (navigator.userAgent.includes("Chrome")) {
+		return "chrome"
+	}
+	if (navigator.userAgent.includes("Firefox")) {
+		return "firefox"
+	}
+	if (navigator.userAgent.includes("Safari")) {
+		return "safari"
+	}
+}
+document.body.className = detectBrowser()  

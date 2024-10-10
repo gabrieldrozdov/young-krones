@@ -26,10 +26,24 @@ body {
 #svg-distortion {
 	display: none;
 }
+body.safari .home {
+	filter: unset !important;
+}
+body.safari .home-header-title {
+	filter: unset !important;
+}
 
+/* Home */
 .home {
 	filter: url(#distort);
 }
+@media only screen and (max-width: 1000px) {
+	.home {
+		filter: unset;
+	}
+}
+
+/* Home header */
 .home-header {
 	width: 100vw;
 	height: 100svh;
@@ -95,6 +109,11 @@ body {
 }
 .home-header-nav:active {
 	transform: translateX(-50%) scale(.9);
+}
+@media only screen and (max-width: 1000px) {
+	.home-header-title {
+		filter: unset;
+	}
 }
 
 /* Home kronedom */

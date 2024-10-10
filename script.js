@@ -20,9 +20,11 @@ function animateText() {
 		elmnt.innerHTML = temp;
 	}
 	setInterval(() => {
-		for (let span of document.querySelectorAll('[data-animate] span')) {
-			span.style.fontVariationSettings = `"SCRI" ${Math.round(Math.random()*1000)}, "SCRA" ${Math.round(Math.random()*1000)}`;
-			span.style.bottom = Math.random()*.1-.05 + "em";
+		if (window.innerWidth > 640) {
+			for (let span of document.querySelectorAll('[data-animate] span')) {
+				span.style.fontVariationSettings = `"SCRI" ${Math.round(Math.random()*1000)}, "SCRA" ${Math.round(Math.random()*1000)}`;
+				span.style.bottom = Math.random()*.1-.05 + "em";
+			}
 		}
 	}, 200)
 }

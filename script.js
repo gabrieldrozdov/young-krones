@@ -19,13 +19,23 @@ function animateText() {
 		}
 		elmnt.innerHTML = temp;
 	}
+
+	// Loop
+	let intervalCount = 0;
 	setInterval(() => {
 		if (window.innerWidth > 640) {
 			for (let span of document.querySelectorAll('[data-animate] span')) {
 				span.style.fontVariationSettings = `"SCRI" ${Math.round(Math.random()*1000)}, "SCRA" ${Math.round(Math.random()*1000)}`;
 				span.style.bottom = Math.random()*.1-.05 + "em";
 			}
+		} else if (intervalCount%2 == 0) {
+			// half speed on mobile
+			for (let span of document.querySelectorAll('[data-animate] span')) {
+				span.style.fontVariationSettings = `"SCRI" ${Math.round(Math.random()*1000)}, "SCRA" ${Math.round(Math.random()*1000)}`;
+				span.style.bottom = Math.random()*.1-.05 + "em";
+			}
 		}
+		intervalCount++;
 	}, 200)
 }
 animateText();
